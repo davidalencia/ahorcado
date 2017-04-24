@@ -46,11 +46,11 @@ echo 	"<!DOCTYPE HTML>
 	echo		"</head>
 				<body>
 					<form method='POST' action='principal.php'>
-					<input type='hidden' name='sigueIntentando' value='".$sigueIntentando."'/>
-					<input type='hidden' name='tema' value='".$opcion."'/>
-					<input type='text' name='letra'/>
-					<input type='submit'/>
-					<form/>";
+						<input type='hidden' name='sigueIntentando' value='".$sigueIntentando."'/>
+						<input type='hidden' name='tema' value='".$opcion."'/>
+						<input type='text' name='letra'/>
+						<input type='submit'/>
+						<form/>";
 	echo 			"<br/>".$opcion."<br/>".$sigueIntentando;
 	echo 			"<br/><a href='pregunta.php'>regresa<a/>";
 	echo 		"</body>
