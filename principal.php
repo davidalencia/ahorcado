@@ -1,5 +1,22 @@
 <?php
 include('funciones.php');
+include('palabras.php');
+
+$opcion=datos('tema');
+$sigueIntentando=datos('sigueIntentando');
+
+if ($sigueIntentando=='-1') {
+	if ($opcion=='animales')
+		$opcion=azar($animales);
+	elseif ($opcion=='calzado') 
+		$opcion=azar($calzado);
+	else
+		$opcion=azar($comida);
+	$sigueIntentando=0;
+}
+
+$sigueIntentando++;
+
 
 echo 	"<!DOCTYPE HTML>
 			<html lang='es'>
@@ -8,24 +25,15 @@ echo 	"<!DOCTYPE HTML>
 					<meta charset='UTF-8'/>
 					<link rel='stylesheet' type='text/css' href='estilado.css'/>";
 	echo		"</head>
-				<body>";
-	echo 			"<form method='POST' action='principal.php'>
-						<h1>Selecciona el tema del que desees adivinar</h1><br/>
-						<select name='tema'>
-							<option value='' selected>--Seleccionar--</option>
-							<option value='comidas'>Comidas</option>
-							<option value='calzado'>Calzado</option>
-							<option value='vida marina'>Vida marina</option>
-						</select>
-						<input type='submit' value='Establecer tema'>
-					</form>";
+				<body>
+					<form method='POST' action='principal.php'>
+					<input type='hidden' name='sigueIntentando' value='".$sigueIntentando."'/>
+					<input type='hidden' name='tema' value='".$opcion."'/>
+					<input type='submit'/>
+					<form/>";
+	echo 			"<br/>".$opcion."<br/>".$sigueIntentando;
+	echo 			"<br/><a href='pregunta.php'>regresa<a/>";
 	echo 		"</body>
 			</html>";
-$palabras = array( "crema", "saco", "examen", "volumen", "origen", "salas",
-  "trenes", "abanderado", "abanico", "acuarela", "acusado", "anulares",
-  "arrecife", "avispa", "banquero", "cilindro", "cintura", "cuaderno",
-  "elefante", "elemento", "lechuga", "martes", "resortes", "tijeras",
-  "zapatos" );
-  
-	echo "<br/>".azar($palabras)."<br/>";
+
 ?>
