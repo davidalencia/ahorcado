@@ -14,7 +14,10 @@ function azar(&$array){
 }
 
 function datos ($nombre){
-	return $_POST[$nombre];
+	if (isset($_POST[$nombre])) 
+		return $_POST[$nombre];
+	else
+		return "sin valor";
 }
 
 ?>

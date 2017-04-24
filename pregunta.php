@@ -15,6 +15,7 @@ echo 	"<!DOCTYPE HTML>
 							<option value='calzado'>Calzado</option>
 							<option value='animales'>Animales</option>
 						</select>
+						<input type='hidden' name='sigueIntentando' value='-1'/>
 						<input type='submit' value='Establecer tema'>
 					</form>";
 	echo 		"</body>
