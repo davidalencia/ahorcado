@@ -22,16 +22,14 @@ if ($sigueIntentando=='-1') {
 	else
 		$opcion=azar($comida);
 	//destrucción y creación de palabraUsu
-	for ($alfa=0; $alfa < count($palabraUsu); $alfa++) {
-		$palabraUsu=str_split($palabraUsu);
+	$palabraUsu=str_split($palabraUsu);
+	for ($alfa=0; $alfa < count($palabraUsu); $alfa++)
 		unset($palabraUsu[$alfa]);
-		$palabraUsu=implode($palabraUsu);
-		echo "va una ";
-	}
+	$palabraUsu=implode($palabraUsu);
 	for ($alfa=0; $alfa < strlen($opcion); $alfa++)
 		$palabraUsu[$alfa]="_";
 	//iniciacion del contador
-	$sigueIntentando=0;
+	$sigueIntentando=6;
 }
 //pasa a mayusculas la opcion dada por el usuario
 $opcion=strtoupper($opcion);
@@ -45,18 +43,17 @@ for ($alfa=0; $alfa < strlen($opcion); $alfa++) {
 		$si=false;
 	}
 	else
-		$miniError++;
+		$miniError++;//miniError sirve para llevar  el control de que no encaje con ninguna letra la letra puesta
 }
-
+//lleva la cuenta de errores
 if ($miniError==strlen($opcion)) {
-	$sigueIntentando++;
+	$sigueIntentando--;
 }
-
+//evita un error que si soy sincero no se donde esta
 if (is_array($palabraUsu))
 	$palabraUsu=implode($palabraUsu);
 
-echo $palabraUsu;
-
+//todo lo demas
 echo 	"<!DOCTYPE HTML>
 			<html lang='es'>
 				<head>";
@@ -65,6 +62,7 @@ echo 	"<!DOCTYPE HTML>
 					<link rel='stylesheet' type='text/css' href='estilado.css'/>";
 	echo		"</head>
 				<body>
+					<h2>".$palabraUsu."</h2>
 					<form method='POST' action='principal.php'>
 					<input type='hidden' name='sigueIntentando' value='".$sigueIntentando."'/>
 					<input type='hidden' name='tema' value='".$opcion."'/>
@@ -74,6 +72,10 @@ echo 	"<!DOCTYPE HTML>
 					<form/>";
 	echo 			"<br/>".$opcion."<br/>".$sigueIntentando;
 	echo 			"<br/><a href='pregunta.php'>regresa<a/>";
+	//pa ver si ya le atino
+	if ($palabraUsu==$opcion) {
+echo 				"<br/><div><a href='pregunta.php'>lo lograste</a></div>";
+	}
 	echo 		"</body>
 			</html>";
 
