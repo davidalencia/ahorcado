@@ -13,4 +13,8 @@ function azar(&$array){
   return $tmp;
 }
 
+function datos ($nombre){
+	return $_POST[$nombre];
+}
+
 ?>

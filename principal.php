@@ -1,5 +1,9 @@
 <?php
 include('funciones.php');
+include('palabras.php');
+
+$opcion=datos('tema');
+
 
 echo 	"<!DOCTYPE HTML>
 			<html lang='es'>
@@ -9,23 +13,14 @@ echo 	"<!DOCTYPE HTML>
 					<link rel='stylesheet' type='text/css' href='estilado.css'/>";
 	echo		"</head>
 				<body>";
-	echo 			"<form method='POST' action='principal.php'>
-						<h1>Selecciona el tema del que desees adivinar</h1><br/>
-						<select name='tema'>
-							<option value='' selected>--Seleccionar--</option>
-							<option value='comidas'>Comidas</option>
-							<option value='calzado'>Calzado</option>
-							<option value='vida marina'>Vida marina</option>
-						</select>
-						<input type='submit' value='Establecer tema'>
-					</form>";
+if ($opcion=='animales')
+	echo "<br/>".azar($animales)."<br/>";
+elseif ($opcion=='calzado') 
+	echo "<br/>".azar($calzado)."<br/>";
+else
+	echo "<br/>".azar($comida)."<br/>";
+	echo 			"";
 	echo 		"</body>
 			</html>";
-$palabras = array( "crema", "saco", "examen", "volumen", "origen", "salas",
-  "trenes", "abanderado", "abanico", "acuarela", "acusado", "anulares",
-  "arrecife", "avispa", "banquero", "cilindro", "cintura", "cuaderno",
-  "elefante", "elemento", "lechuga", "martes", "resortes", "tijeras",
-  "zapatos" );
-  
-	echo "<br/>".azar($palabras)."<br/>";
+
 ?>
