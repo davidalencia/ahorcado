@@ -6,11 +6,12 @@ include('palabras.php');
 $opcion=datos('tema');
 $sigueIntentando=datos('sigueIntentando');
 $letra=datos('letra');
+
 $palabraUsu=datos('palabra');
 $letra=strtoupper($letra);
 $si=false;
 $palabra =array();
-$miniError=0;
+
 
 //codigo que se inicia cuando entra por primera vez
 if ($sigueIntentando=='-1') {
@@ -21,6 +22,7 @@ if ($sigueIntentando=='-1') {
 		$opcion=azar($calzado);
 	else
 		$opcion=azar($comida);
+
 	//destrucción y creación de palabraUsu
 	for ($alfa=0; $alfa < count($palabraUsu); $alfa++) {
 		$palabraUsu=str_split($palabraUsu);
@@ -31,6 +33,7 @@ if ($sigueIntentando=='-1') {
 	for ($alfa=0; $alfa < strlen($opcion); $alfa++)
 		$palabraUsu[$alfa]="_";
 	//iniciacion del contador
+
 	$sigueIntentando=0;
 }
 //pasa a mayusculas la opcion dada por el usuario
@@ -57,6 +60,7 @@ if (is_array($palabraUsu))
 
 echo $palabraUsu;
 
+
 echo 	"<!DOCTYPE HTML>
 			<html lang='es'>
 				<head>";
@@ -66,12 +70,14 @@ echo 	"<!DOCTYPE HTML>
 	echo		"</head>
 				<body>
 					<form method='POST' action='principal.php'>
-					<input type='hidden' name='sigueIntentando' value='".$sigueIntentando."'/>
-					<input type='hidden' name='tema' value='".$opcion."'/>
-					<input type='hidden' name='palabra' value='".$palabraUsu."'/>
-					<input type='text' name='letra'/>
-					<input type='submit'/>
-					<form/>";
+
+					  <input type='hidden' name='sigueIntentando' value='".$sigueIntentando."'/>
+					  <input type='hidden' name='tema' value='".$opcion."'/>
+					  <input type='hidden' name='palabra' value='".$palabraUsu."'/>
+					  <input type='text' name='letra'/>
+					  <input type='submit'/>
+					  <form/>";
+
 	echo 			"<br/>".$opcion."<br/>".$sigueIntentando;
 	echo 			"<br/><a href='pregunta.php'>regresa<a/>";
 	echo 		"</body>
