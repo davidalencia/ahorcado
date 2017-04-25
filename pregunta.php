@@ -6,7 +6,7 @@ echo 	"<!DOCTYPE HTML>
 					<meta charset='UTF-8'/>
 					<link rel='stylesheet' type='text/css' href='estilado.css'/>";
 	echo		"</head>
-				<body>";
+				<body id='pregunta'>";
 	echo 			"<form method='POST' action='principal.php'>
 						<h1 id='arri'>¿De verdad quieres morir hoy?</h1>
 						

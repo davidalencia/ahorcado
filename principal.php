@@ -14,6 +14,24 @@ $palabra =array();
 $miniError=0;
 
 //codigo que se inicia cuando entra por primera vez
+echo "<h1>".$sigueIntentando."</h1></br>";
+if($sigueIntentando==-1)
+{
+	$b=6;
+	$bg='error'.$b;
+}
+echo "<h1>".$b."</h1>";
+for($a=5;$a>=0;$a--)
+{
+	
+	if($sigueIntentando==$a)
+	{
+		$b=$a;
+		
+		$bg='error'.$b;
+	}
+	
+}
 if ($sigueIntentando=='-1') {
 	//eleccion de categoria
 	if ($opcion=='animales')
@@ -33,6 +51,7 @@ if ($sigueIntentando=='-1') {
 	//iniciacion del contador
 	$sigueIntentando=6;
 }
+
 //pasa a mayusculas la opcion dada por el usuario
 $opcion=strtoupper($opcion);
 //compara y pone la letras correctas
@@ -63,22 +82,23 @@ echo 	"<!DOCTYPE HTML>
 					<meta charset='UTF-8'/>
 					<link rel='stylesheet' type='text/css' href='estilado.css'/>";
 	echo		"</head>
-				<body>
-					<h2>".$palabraUsu."</h2>
-					<form method='POST' action='principal.php'>
+				<body id='".$bg."'>
+					<h2 id='abajo'>".$palabraUsu."   ".$bg."</h2> ".$sigueIntentando;
+	echo 			"<form method='POST' action='principal.php'>
 
 					  <input type='hidden' name='sigueIntentando' value='".$sigueIntentando."'/>
 					  <input type='hidden' name='tema' value='".$opcion."'/>
 					  <input type='hidden' name='palabra' value='".$palabraUsu."'/>
-					  <input type='text' name='letra'/>
-					  <input type='submit'/>
+					  <input id='abenlado' type='text' name='letra'/>
+					  <input id='abenmed' type='submit' value='¡¡¡APUESTA TU VIDA!!!'/>
+					  
 					  <form/>";
 
-	echo 			"<br/>".$opcion."<br/>".$sigueIntentando;
-	echo 			"<br/><a href='pregunta.php'>regresa<a/>";
+	
+	echo 			"<br/><a id='ababenmed'href='pregunta.php'>Escoge otro tema<a/>";
 	//pa ver si ya le atino
 	if ($palabraUsu==$opcion) {
-echo 				"<br/><div><a href='pregunta.php'>lo lograste</a></div>";
+echo 				"<br/><div><a id='ababenlado' href='pregunta.php'>Juega de nuevo</a></div>";
 	}
 	echo 		"</body>
 			</html>";

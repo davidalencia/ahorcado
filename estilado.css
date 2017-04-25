@@ -1,9 +1,44 @@
-body
+#pregunta
 {
 	background-image:url('AHORFON2.jpg');
 	background-size: 100% 700px;
 	background-repeat:no-repeat;
 	z-index:0.5;
+}
+#error6
+{
+	background-image:url('error6.jpg');
+	background-size: 100% 700px;
+}
+#error5
+{
+	background-image:url('error5.jpg');
+	background-size: 100% 700px;
+}
+#error4
+{
+	background-image:url('error4.jpg');
+	background-size: 100% 700px;
+}
+#error3
+{
+	background-image:url('error3.jpg');
+	background-size: 100% 700px;
+}
+#error2
+{
+	background-image:url('error2.jpg');
+	background-size: 100% 700px;
+}
+#error1
+{
+	background-image:url('error1.jpg');
+	background-size: 100% 700px;
+}
+#error0
+{
+	background-image:url('error0.jpg');
+	background-size: 100% 700px;
 }
 #arri
 {
@@ -47,5 +82,40 @@ body
 	font-size:25px;
 	position:absolute;
 	top:400px;
+	left:50%;
+}
+#abajo
+{
+	font-size:25px;
+	position:absolute;
+	top:450px;
+	left:65%;
+}
+#abenlado
+{
+	font-size:25px;
+	position:absolute;
+	top:550px;
+	left:40%;
+}
+#abenmed
+{
+	font-size:25px;
+	position:absolute;
+	top:550px;
+	left:60%;
+}
+#ababenlado
+{
+	font-size:25px;
+	position:absolute;
+	top:600px;
+	left:30%;
+}
+#ababenmed
+{
+	font-size:25px;
+	position:absolute;
+	top:600px;
 	left:50%;
 }
