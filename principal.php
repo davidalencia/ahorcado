@@ -6,11 +6,12 @@ include('palabras.php');
 $opcion=datos('tema');
 $sigueIntentando=datos('sigueIntentando');
 $letra=datos('letra');
+
 $palabraUsu=datos('palabra');
 $letra=strtoupper($letra);
 $si=false;
 $palabra =array();
-$miniError=0;
+
 
 //codigo que se inicia cuando entra por primera vez
 if ($sigueIntentando=='-1') {
@@ -21,6 +22,7 @@ if ($sigueIntentando=='-1') {
 		$opcion=azar($calzado);
 	else
 		$opcion=azar($comida);
+
 	//destrucción y creación de palabraUsu
 	$palabraUsu=str_split($palabraUsu);
 	for ($alfa=0; $alfa < count($palabraUsu); $alfa++)
@@ -29,7 +31,12 @@ if ($sigueIntentando=='-1') {
 	for ($alfa=0; $alfa < strlen($opcion); $alfa++)
 		$palabraUsu[$alfa]="_";
 	//iniciacion del contador
+<<<<<<< HEAD
 	$sigueIntentando=6;
+=======
+
+	$sigueIntentando=0;
+>>>>>>> c906c3e91bdd0f3ccdd5d91ad07d13baca0ebdef
 }
 //pasa a mayusculas la opcion dada por el usuario
 $opcion=strtoupper($opcion);
@@ -53,7 +60,13 @@ if ($miniError==strlen($opcion)) {
 if (is_array($palabraUsu))
 	$palabraUsu=implode($palabraUsu);
 
+<<<<<<< HEAD
 //todo lo demas
+=======
+echo $palabraUsu;
+
+
+>>>>>>> c906c3e91bdd0f3ccdd5d91ad07d13baca0ebdef
 echo 	"<!DOCTYPE HTML>
 			<html lang='es'>
 				<head>";
@@ -64,12 +77,14 @@ echo 	"<!DOCTYPE HTML>
 				<body>
 					<h2>".$palabraUsu."</h2>
 					<form method='POST' action='principal.php'>
-					<input type='hidden' name='sigueIntentando' value='".$sigueIntentando."'/>
-					<input type='hidden' name='tema' value='".$opcion."'/>
-					<input type='hidden' name='palabra' value='".$palabraUsu."'/>
-					<input type='text' name='letra'/>
-					<input type='submit'/>
-					<form/>";
+
+					  <input type='hidden' name='sigueIntentando' value='".$sigueIntentando."'/>
+					  <input type='hidden' name='tema' value='".$opcion."'/>
+					  <input type='hidden' name='palabra' value='".$palabraUsu."'/>
+					  <input type='text' name='letra'/>
+					  <input type='submit'/>
+					  <form/>";
+
 	echo 			"<br/>".$opcion."<br/>".$sigueIntentando;
 	echo 			"<br/><a href='pregunta.php'>regresa<a/>";
 	//pa ver si ya le atino
