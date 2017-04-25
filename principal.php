@@ -11,7 +11,7 @@ $palabraUsu=datos('palabra');
 $letra=strtoupper($letra);
 $si=false;
 $palabra =array();
-
+$miniError=0;
 
 //codigo que se inicia cuando entra por primera vez
 if ($sigueIntentando=='-1') {
