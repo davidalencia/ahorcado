@@ -1,9 +1,14 @@
+#titulo
+{
+	text-shadow: black 10px 10px 30px;
+	text-align:center;
+	font-size:80px;
+	color:white;
+}
 #pregunta
 {
 	background-image:url('AHORFON2.jpg');
 	background-size: 100% 700px;
-	background-repeat:no-repeat;
-	z-index:0.5;
 }
 #error6
 {
@@ -50,7 +55,7 @@
 	left:24%;
 	/* border: solid 10px; */
 }
-#medmed
+#medarri
 {
 	
 	text-shadow: white 0px 0px 10px;
@@ -60,7 +65,17 @@
 	left:25%;
 	/* border: solid 10px; */
 }
-#med
+#medarrio
+{
+	
+	text-shadow: white 0px 0px 10px;
+	font-size:25px;
+	position:absolute;
+	top:265px;
+	left:25%;
+	/* border: solid 10px; */
+}
+#medabaj
 {
 	
 	text-shadow: white 0px 0px 10px;
@@ -70,52 +85,58 @@
 	left:24%;
 	/* border: solid 10px; */
 }
-#enlado
+#abajiz
 {
 	font-size:25px;
 	position:absolute;
 	top:400px;
 	left:30%;
 }
-#enmed
+#abajde
 {
 	font-size:25px;
 	position:absolute;
 	top:400px;
 	left:50%;
 }
-#abajo
+
+
+#abajp
 {
 	font-size:25px;
 	position:absolute;
 	top:450px;
 	left:65%;
 }
-#abenlado
+#abajmedizp
 {
 	font-size:25px;
 	position:absolute;
 	top:550px;
 	left:40%;
 }
-#abenmed
+#abajmeddep
 {
 	font-size:25px;
 	position:absolute;
 	top:550px;
 	left:60%;
 }
-#ababenlado
+#abajabajizp
 {
+	border:yellow 5px outset;
+	background-color:yellow;
 	font-size:25px;
 	position:absolute;
-	top:600px;
+	top:595px;
 	left:30%;
 }
-#ababenmed
+#abajabajdep
 {
+	border:red 5px solid;
+	background-color:red;
 	font-size:25px;
 	position:absolute;
-	top:600px;
+	top:595px;
 	left:50%;
 }

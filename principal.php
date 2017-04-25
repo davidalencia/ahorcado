@@ -14,23 +14,24 @@ $palabra =array();
 $miniError=0;
 
 //codigo que se inicia cuando entra por primera vez
-echo "<h1>".$sigueIntentando."</h1></br>";
+$nom=(isset($_POST['nom']))?$_POST['nom']:'';
+if($nom!='')
+	setcookie('usuario',$nom,time()+180,'/');
+$tema=(isset($_POST['tema']))?$_POST['tema']:'';
+if($nom!='')
+	setcookie('tema',$tema,time()+180,'/');
 if($sigueIntentando==-1)
 {
 	$b=6;
 	$bg='error'.$b;
 }
-echo "<h1>".$b."</h1>";
 for($a=5;$a>=0;$a--)
 {
-	
 	if($sigueIntentando==$a)
 	{
 		$b=$a;
-		
 		$bg='error'.$b;
 	}
-	
 }
 if ($sigueIntentando=='-1') {
 	//eleccion de categoria
@@ -82,23 +83,23 @@ echo 	"<!DOCTYPE HTML>
 					<meta charset='UTF-8'/>
 					<link rel='stylesheet' type='text/css' href='estilado.css'/>";
 	echo		"</head>
-				<body id='".$bg."'>
-					<h2 id='abajo'>".$palabraUsu."   ".$bg."</h2> ".$sigueIntentando;
+				<body id='".$bg."'>";
+	echo			"<h1 id='titulo'>Juguemos al ahorcado</h1>";
 	echo 			"<form method='POST' action='principal.php'>
-
+						<h1 id='abajp'>".$palabraUsu."</h1>
 					  <input type='hidden' name='sigueIntentando' value='".$sigueIntentando."'/>
 					  <input type='hidden' name='tema' value='".$opcion."'/>
 					  <input type='hidden' name='palabra' value='".$palabraUsu."'/>
-					  <input id='abenlado' type='text' name='letra'/>
-					  <input id='abenmed' type='submit' value='¡¡¡APUESTA TU VIDA!!!'/>
+					  <input id='abajmedizp' type='text' name='letra'/>
+					  <input id='abajmeddep' type='submit' value='¡¡¡APUESTA TU VIDA!!!'/>
 					  
 					  <form/>";
 
 	
-	echo 			"<br/><a id='ababenmed'href='pregunta.php'>Escoge otro tema<a/>";
+	echo 			"<br/><a id='abajabajizp'href='pregunta.php'>Escoge otro tema<a/>";
 	//pa ver si ya le atino
 	if ($palabraUsu==$opcion) {
-echo 				"<br/><div><a id='ababenlado' href='pregunta.php'>Juega de nuevo</a></div>";
+echo 				"<div id='abajabajdep'><a href='pregunta.php'><==== <a/>¡¡¡TE SALVASTE!!!</div>";
 	}
 	echo 		"</body>
 			</html>";
