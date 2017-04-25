@@ -31,12 +31,7 @@ if ($sigueIntentando=='-1') {
 	for ($alfa=0; $alfa < strlen($opcion); $alfa++)
 		$palabraUsu[$alfa]="_";
 	//iniciacion del contador
-<<<<<<< HEAD
 	$sigueIntentando=6;
-=======
-
-	$sigueIntentando=0;
->>>>>>> c906c3e91bdd0f3ccdd5d91ad07d13baca0ebdef
 }
 //pasa a mayusculas la opcion dada por el usuario
 $opcion=strtoupper($opcion);
@@ -60,13 +55,7 @@ if ($miniError==strlen($opcion)) {
 if (is_array($palabraUsu))
 	$palabraUsu=implode($palabraUsu);
 
-<<<<<<< HEAD
 //todo lo demas
-=======
-echo $palabraUsu;
-
-
->>>>>>> c906c3e91bdd0f3ccdd5d91ad07d13baca0ebdef
 echo 	"<!DOCTYPE HTML>
 			<html lang='es'>
 				<head>";
